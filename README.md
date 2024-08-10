@@ -28,6 +28,7 @@ DevOpsAcademy offers a variety of courses in the DevOps domain, including tools 
 - **Course Details**: Detailed descriptions and pricing information for each course.
 - **Secure Payment**: Purchase courses via secure UPI (Unified Payments Interface).
 - **Responsive Design**: Optimized for various devices and screen sizes.
+- **Enhanced User Experience**: Sophisticated and visually appealing UI for a seamless experience.
 
 ## Getting Started
 
@@ -35,8 +36,8 @@ DevOpsAcademy offers a variety of courses in the DevOps domain, including tools 
 
 Before you begin, ensure you have the following installed:
 
-- **Ruby**: Version 3.0.0 or later
-- **Rails**: Version 6.1 or later
+- **Ruby**: Version 3.3.4
+- **Rails**: Version 7.0.8
 - **Node.js**: Version 14 or later
 - **Yarn**: Version 1.22 or later
 - **PostgreSQL**: Version 12 or later
@@ -92,7 +93,11 @@ Navigate to `/courses` to view the list of available courses. Each course entry 
 
 ### Viewing Course Details
 
-Click on "Learn More" for any course to view detailed information, including descriptions and purchasing options.
+Click on "Learn More" for any course to view detailed information, including descriptions and purchasing options. The course detail page features:
+
+- **Enhanced Course Layout**: Rich, interactive layout with course details.
+- **Secure UPI Payment Button**: Easy and secure payment options via UPI.
+- **Interactive QR Code**: For UPI payment convenience.
 
 ## Contributing
 
@@ -136,3 +141,11 @@ For any questions or inquiries, please reach out to:
 ---
 
 Feel free to tailor this template to better suit your project's needs. The provided structure includes key sections that are important for most projects and helps users understand how to get started, use the application, and contribute effectively.
+
+### Key Updates:
+1. **Prerequisites**: Updated Ruby version to 3.3.4 and Rails to 7.0.8.
+2. **Features**: Added details on enhanced user experience and interactive elements.
+3. **Usage**: Added details on enhanced UI and payment options.
+4. **Contact**: Updated with a placeholder email and link for GitHub issues.
+
+Feel free to adjust the sections as needed to better reflect any other changes or additional features you have in the project!
