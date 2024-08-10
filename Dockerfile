@@ -47,5 +47,4 @@ COPY --from=build /app /app
 EXPOSE 3000
 
 # Start the application
-CMD ["bundle", "install"]
-CMD ["rails", "server", "-b", "0.0.0.0"]
+CMD ["sh", "-c", "bundle install && rails server -b 0.0.0.0"]

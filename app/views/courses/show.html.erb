@@ -10,9 +10,10 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
   <style>
     body {
-      background: linear-gradient(to right, #f0f4f8, #e2e8f0);
+      background: linear-gradient(to right, #f0f4f8, #dfe9f3);
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #333;
+      padding: 20px;
     }
     .course-details {
       margin: 50px auto;
@@ -23,6 +24,11 @@
       padding: 40px;
       overflow: hidden;
       position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .course-details:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 35px 60px rgba(0, 0, 0, 0.3);
     }
     .course-header {
       text-align: center;
@@ -39,26 +45,33 @@
       font-size: 2.5rem;
       font-weight: 700;
       color: #38a169;
+      animation: pulse 1.5s infinite;
     }
-    .description {
+    .description, .topics {
+      margin-top: 20px;
+    }
+    .description p, .topics p {
       font-size: 1.2rem;
       line-height: 1.6;
-      margin-top: 20px;
+      color: #4a5568;
     }
     .topics-list {
       list-style: none;
       padding: 0;
       margin: 20px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
     }
     .topics-list li {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       background: #f7fafc;
       border: 1px solid #e2e8f0;
       border-radius: 12px;
-      margin-bottom: 15px;
       padding: 15px;
       transition: background-color 0.3s, transform 0.3s;
       position: relative;
+      flex: 1 1 45%;
     }
     .topics-list li::before {
       content: '';
@@ -67,7 +80,7 @@
       top: 50%;
       width: 10px;
       height: 100%;
-      background: #38a169;
+      background: #3182ce;
       border-radius: 0 10px 10px 0;
       transform: translateY(-50%);
     }
@@ -85,11 +98,14 @@
       font-size: 1.3rem;
       transition: background-color 0.3s, transform 0.3s;
       display: inline-block;
+      margin-top: 30px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
     .btn-upi:hover {
       background-color: #2b6cb0;
       border-color: #2b6cb0;
-      transform: scale(1.05);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     }
     .qr-container {
       margin-top: 30px;
@@ -97,6 +113,10 @@
     }
     .img-fluid {
       max-width: 250px;
+      transition: transform 0.3s ease-in-out;
+    }
+    .img-fluid:hover {
+      transform: scale(1.05);
     }
     .btn-secondary {
       margin-top: 30px;
@@ -104,10 +124,14 @@
       background-color: #edf2f7;
       border-color: #e2e8f0;
       color: #2d3748;
+      transition: background-color 0.3s, transform 0.3s;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
     .btn-secondary:hover {
       background-color: #e2e8f0;
       border-color: #cbd5e0;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     }
     .course-header::before {
       content: '';
@@ -118,6 +142,14 @@
       height: 20px;
       background: #3182ce;
       border-radius: 0 0 20px 20px;
+    }
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
     }
   </style>
 </head>

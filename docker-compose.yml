@@ -13,7 +13,7 @@ services:
       - redis
     environment:
       RAILS_ENV: development
-      DATABASE_URL: postgres://postgres:Kubernetes@1993@db/devops_academy_development
+      DATABASE_URL: postgres://postgres:Kubernetes@1993@db:5432/devops_academy_development
       REDIS_URL: redis://redis:6379/1
     env_file:
       - .env
@@ -25,13 +25,15 @@ services:
       timeout: 10s
 
   db:
-    image: postgres:13
+    image: postgres:16
     volumes:
       - postgres_data:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: password
+      POSTGRES_PASSWORD: Kubernetes@1993
       POSTGRES_DB: devops_academy_development
+    ports:
+      - "5432:5432"  # Expose port for potential direct connections
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
       interval: 30s
