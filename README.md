@@ -1,4 +1,8 @@
+[![Build and Push Docker Image](https://github.com/Amits64/DevOpsAcademy/actions/workflows/ci-build.yml/badge.svg)](https://github.com/Amits64/DevOpsAcademy/actions/workflows/ci-build.yml)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=amits64_devopsacademy&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=amits64_devopsacademy)
+
 # DevOpsAcademy
+[![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/summary/new_code?id=amits64_devopsacademy)
 
 Welcome to the DevOpsAcademy project! This repository contains a suite of tools and resources for learning and mastering DevOps practices. The project includes various courses, interactive content, and utilities designed to help you advance your career in DevOps.
 
