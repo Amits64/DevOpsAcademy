@@ -1,5 +1,5 @@
 # Stage 1: Build
-FROM ruby:3.1.0 AS build
+FROM ruby:3.3.4 AS build
 
 # Install dependencies
 RUN apt-get update -qq && apt-get install -y \
@@ -27,7 +27,7 @@ COPY . .
 RUN bundle exec rake assets:precompile
 
 # Stage 2: Runtime
-FROM ruby:3.1.0
+FROM ruby:3.3.4
 
 # Install dependencies
 RUN apt-get update -qq && apt-get install -y \
