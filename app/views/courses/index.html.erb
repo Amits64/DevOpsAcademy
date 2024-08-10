@@ -180,7 +180,8 @@
               <i class="card-icon fas fa-laptop-code"></i>
               <h5 class="card-title"><%= course[:name] %></h5>
               <p class="card-text">$<%= course[:price] %></p>
-              <a href="#" class="btn btn-primary"><i class="fas fa-info-circle"></i> Learn More</a>
+              <!-- Link to show page of the course -->
+              <a href="<%= course_path(course) %>" class="btn btn-primary"><i class="fas fa-info-circle"></i> Learn More</a>
             </div>
           </div>
         </div>

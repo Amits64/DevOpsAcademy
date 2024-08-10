@@ -3,76 +3,178 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= @course[:name] %> - Learn More</title>
+  <title><%= @course.name %> - Course Details</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link rel="stylesheet" href="<%= asset_path('custom-animate.css') %>">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
   <style>
     body {
+      background: linear-gradient(to right, #f0f4f8, #e2e8f0);
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
     }
     .course-details {
-      padding: 50px 0;
+      margin: 50px auto;
+      max-width: 900px;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+      padding: 40px;
+      overflow: hidden;
+      position: relative;
     }
-    .course-details h1 {
-      margin-bottom: 20px;
+    .course-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .course-header h1 {
+      font-size: 3.5rem;
+      color: #2d3748;
+      margin-bottom: 15px;
+      font-weight: 700;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    .course-price {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #38a169;
+    }
+    .description {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-top: 20px;
+    }
+    .topics-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+    .topics-list li {
+      font-size: 1.2rem;
+      background: #f7fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      padding: 15px;
+      transition: background-color 0.3s, transform 0.3s;
+      position: relative;
+    }
+    .topics-list li::before {
+      content: '';
+      position: absolute;
+      left: -10px;
+      top: 50%;
+      width: 10px;
+      height: 100%;
+      background: #38a169;
+      border-radius: 0 10px 10px 0;
+      transform: translateY(-50%);
+    }
+    .topics-list li:hover {
+      background-color: #e2e8f0;
+      transform: scale(1.03);
     }
     .btn-upi {
-      background-color: #007bff;
-      border-color: #007bff;
-      border-radius: 30px;
-      padding: 10px 20px;
-      font-size: 1rem;
+      background-color: #3182ce;
+      border-color: #3182ce;
       color: #fff;
+      text-decoration: none;
+      border-radius: 10px;
+      padding: 15px 30px;
+      font-size: 1.3rem;
+      transition: background-color 0.3s, transform 0.3s;
+      display: inline-block;
     }
     .btn-upi:hover {
-      background-color: #0056b3;
-      border-color: #004085;
+      background-color: #2b6cb0;
+      border-color: #2b6cb0;
+      transform: scale(1.05);
+    }
+    .qr-container {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .img-fluid {
+      max-width: 250px;
+    }
+    .btn-secondary {
+      margin-top: 30px;
+      font-size: 1.3rem;
+      background-color: #edf2f7;
+      border-color: #e2e8f0;
+      color: #2d3748;
+    }
+    .btn-secondary:hover {
+      background-color: #e2e8f0;
+      border-color: #cbd5e0;
+    }
+    .course-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 20px;
+      background: #3182ce;
+      border-radius: 0 0 20px 20px;
     }
   </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">DevOps Academy</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="<%= courses_path %>">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Courses</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
-        </li>
-      </ul>
+  <div class="container course-details animate__animated animate__fadeIn" data-aos="fade-up" data-aos-duration="1200">
+    <div class="course-header">
+      <h1><%= @course.name %></h1>
+      <p class="course-price">$<%= @course.price %></p>
     </div>
-  </nav>
+    
+    <div class="description">
+      <h3>Description</h3>
+      <p><%= @course.description %></p>
+    </div>
 
-  <section class="course-details text-center">
-    <div class="container">
-      <h1><%= @course[:name] %></h1>
-      <p>Description for <%= @course[:name] %> will go here.</p>
-      <p><strong>Price:</strong> $<%= @course[:price] %></p>
-      <a href="upi://pay?pa=your-upi-id@bank&pn=YourName&mc=1234&tid=1234567890&cid=001&tid=1234567890&amt=<%= @course[:price] %>&cu=INR&url=https://yourwebsite.com" class="btn btn-upi">
-        <i class="fas fa-wallet"></i> Pay with UPI
+    <div class="topics">
+      <h3>Topics Covered</h3>
+      <% if @course.topics.present? %>
+        <ul class="topics-list">
+          <% @course.topics.each do |topic| %>
+            <li><%= topic %></li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p>No topics covered yet.</p>
+      <% end %>
+    </div>
+
+    <!-- UPI payment button -->
+    <div class="text-center">
+      <a href="upi://pay?pa=youremail@example.com&pn=Your+Name&am=<%= @course.price %>&cu=INR&tn=<%= @course.name %>" class="btn-upi">
+        <i class="fas fa-rupee-sign"></i> Pay with UPI
       </a>
     </div>
-  </section>
 
-  <footer class="footer text-center py-4">
-    <p>&copy; 2024 DevOps Academy. All rights reserved. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-  </footer>
+    <!-- QR Code Image -->
+    <div class="qr-container">
+      <img src="<%= asset_path('qr.png') %>" alt="QR Code for UPI Payment" class="img-fluid">
+    </div>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- Back to courses link -->
+    <div class="text-center">
+      <a href="<%= courses_path %>" class="btn btn-secondary">
+        <i class="fas fa-arrow-left"></i> Back to Courses
+      </a>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1200,
+      once: true
+    });
+  </script>
 </body>
 </html>
