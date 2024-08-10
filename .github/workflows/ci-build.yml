@@ -73,10 +73,16 @@ jobs:
     - name: Set current timestamp
       id: timestamp
       run: echo "TIMESTAMP=$(date +%s)" >> $GITHUB_ENV
-
+      
     - name: Build and push
+      id: build_and_push
       uses: docker/build-push-action@v3
       with:
         context: .
         push: true
         tags: amits64/devops_academy:v${{ env.TIMESTAMP }}
+      
+    - name: Output Image Tag
+      id: output_image_tag
+      run: echo "IMAGE_TAG=amits64/devops_academy:v${{ env.TIMESTAMP }}" >> $GITHUB_ENV
+      

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-config
+data:
+  database.yml: |
+    default: &default
+      adapter: postgresql
+      encoding: unicode
+      pool: 5
+      host: db
+      username: <%= ENV['DATABASE_USERNAME'] %>
+      password: <%= ENV['DATABASE_PASSWORD'] %>
+      database: <%= ENV['DATABASE_NAME'] %>

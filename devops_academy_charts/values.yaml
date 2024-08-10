@@ -1,0 +1,40 @@
+replicaCount: 1
+
+image:
+  repository: amits64/devops_academy
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 3000
+
+ingress:
+  enabled: false
+  name: ""
+  nginxClassName: ""
+  path: /
+  hosts:
+    - host: chart-example.local
+      paths: []
+  tls: []
+
+postgresql:
+  image: postgres:13
+  postgresqlUsername: postgres
+  postgresqlPassword: password
+  postgresqlDatabase: devops_academy_development
+
+redis:
+  image: redis:6.2
+
+sidekiq:
+  image: ruby:3.3.4
+
+resources: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

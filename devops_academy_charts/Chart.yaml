@@ -1,0 +1,4 @@
+apiVersion: v2
+name: my-app-chart
+description: A Helm chart for deploying my Ruby on Rails application with PostgreSQL, Redis, and Sidekiq
+version: 0.1.0
