@@ -18,7 +18,6 @@
 /config/master.key
 /config/credentials.yml.enc
 Gemfile.lock
-.env
 .ruby-version
 .ruby-gemset
 .vscode
