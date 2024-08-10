@@ -5,42 +5,98 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome to DevOps Academy</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #1f4037, #99f2c8);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #fff;
+      margin: 0;
       height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
+      overflow: hidden;
+      background: url('https://wallpaperbat.com/img/873586-cloud-native-devops.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+    .welcome-container {
       text-align: center;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 40px 30px;
+      border-radius: 25px;
+      box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
+      max-width: 90%;
+      animation: fadeIn 2s ease-in-out;
     }
-    .container {
-      max-width: 800px;
-      background: rgba(0, 0, 0, 0.5);
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    }
-    h1 {
+    .welcome-container h1 {
       font-size: 4rem;
       margin-bottom: 20px;
+      font-weight: bold;
+      color: #f39c12;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+      animation: slideIn 1s ease-out;
     }
-    p {
+    .welcome-container p {
       font-size: 1.5rem;
+      margin-bottom: 30px;
+      line-height: 1.8;
+      color: #ccc;
     }
     .btn-primary {
-      background-color: #007bff;
+      background-color: #f39c12;
       border: none;
+      padding: 15px 30px;
+      font-size: 1.25rem;
+      border-radius: 50px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .btn-primary:hover {
+      background-color: #e67e22;
+      transform: translateY(-2px);
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    @keyframes slideIn {
+      from {
+        transform: translateY(-30px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    footer {
+      position: fixed;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #ddd;
+    }
+    footer p {
+      margin: 0;
+    }
+    footer i {
+      color: #f39c12;
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="welcome-container">
     <h1>Welcome to DevOps Academy</h1>
-    <p>Your one-stop destination for mastering DevOps practices, tools, and methodologies.</p>
-    <a href="/courses" class="btn btn-primary btn-lg mt-3">Get Started</a>
+    <p>Your ultimate destination for mastering DevOps practices, tools, and methodologies with cutting-edge techniques and hands-on experience.</p>
+    <a href="/courses" class="btn btn-primary">Get Started</a>
   </div>
+  <footer>
+    <p>Made with <i class="fas fa-heart"></i> by the DevOps Academy Team</p>
+  </footer>
 </body>
 </html>
