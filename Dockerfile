@@ -2,7 +2,14 @@
 FROM ruby:3.1.0 AS build
 
 # Install dependencies
-RUN apt-get update -qq && apt-get install -y nodejs postgresql-client yarn
+RUN apt-get update -qq && apt-get install -y \
+  nodejs \
+  postgresql-client \
+  yarn \
+  build-essential \
+  libpq-dev \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/*
 
 # Set working directory
 WORKDIR /app
@@ -10,8 +17,8 @@ WORKDIR /app
 # Copy Gemfile and Gemfile.lock
 COPY Gemfile Gemfile.lock ./
 
-# Install dependencies
-RUN bundle install
+# Install Ruby gems
+RUN bundle install --without development test
 
 # Copy app code
 COPY . .
@@ -23,7 +30,12 @@ RUN bundle exec rake assets:precompile
 FROM ruby:3.1.0
 
 # Install dependencies
-RUN apt-get update -qq && apt-get install -y nodejs postgresql-client yarn
+RUN apt-get update -qq && apt-get install -y \
+  nodejs \
+  postgresql-client \
+  yarn \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/*
 
 # Set working directory
 WORKDIR /app
