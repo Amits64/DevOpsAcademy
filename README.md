@@ -1,8 +1,18 @@
 [![Build and Push Docker Image](https://github.com/Amits64/DevOpsAcademy/actions/workflows/ci-build.yml/badge.svg)](https://github.com/Amits64/DevOpsAcademy/actions/workflows/ci-build.yml)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=amits64_devopsacademy&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=amits64_devopsacademy)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Amits64_DevOpsAcademy&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Amits64_DevOpsAcademy)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=Amits64_DevOpsAcademy&metric=bugs)](https://sonarcloud.io/summary/new_code?id=Amits64_DevOpsAcademy)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=Amits64_DevOpsAcademy&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=Amits64_DevOpsAcademy)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=Amits64_DevOpsAcademy&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=Amits64_DevOpsAcademy)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=Amits64_DevOpsAcademy&metric=coverage)](https://sonarcloud.io/summary/new_code?id=Amits64_DevOpsAcademy)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=Amits64_DevOpsAcademy&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=Amits64_DevOpsAcademy)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=Amits64_DevOpsAcademy&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=Amits64_DevOpsAcademy)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=Amits64_DevOpsAcademy&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=Amits64_DevOpsAcademy)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=Amits64_DevOpsAcademy&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=Amits64_DevOpsAcademy)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=Amits64_DevOpsAcademy&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=Amits64_DevOpsAcademy)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=Amits64_DevOpsAcademy&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=Amits64_DevOpsAcademy)
 
 # DevOpsAcademy
-[![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/summary/new_code?id=amits64_devopsacademy)
+[![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-orange.svg)](https://sonarcloud.io/summary/new_code?id=Amits64_DevOpsAcademy)
 
 Welcome to the DevOpsAcademy project! This repository contains a suite of tools and resources for learning and mastering DevOps practices. The project includes various courses, interactive content, and utilities designed to help you advance your career in DevOps.
 
