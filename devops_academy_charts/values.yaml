@@ -22,7 +22,7 @@ ingress:
 postgresql:
   image: postgres:13
   postgresqlUsername: postgres
-  postgresqlPassword: password
+  postgresqlPassword: Kubernetes@1993
   postgresqlDatabase: devops_academy_development
 
 redis:
