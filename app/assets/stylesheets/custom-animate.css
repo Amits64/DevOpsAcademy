@@ -1,0 +1,63 @@
+/* Enhanced animate.css */
+
+/* Keyframes for custom animations */
+@keyframes bounceInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    60% {
+      opacity: 1;
+      transform: translateY(-10%);
+    }
+    80% {
+      transform: translateY(5%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes zoomInOut {
+    0% {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes fadeInRotate {
+    0% {
+      opacity: 0;
+      transform: rotate(-30deg);
+    }
+    100% {
+      opacity: 1;
+      transform: rotate(0deg);
+    }
+  }
+  
+  /* Custom animation classes */
+  .bounceInUp {
+    animation: bounceInUp 1s ease-out;
+  }
+  
+  .zoomInOut {
+    animation: zoomInOut 1.5s ease-in-out;
+  }
+  
+  .fadeInRotate {
+    animation: fadeInRotate 1s ease-in-out;
+  }
+  
+  /* Example for combining multiple animations */
+  .animate__combined {
+    animation: bounceInUp 1s ease-out, zoomInOut 1.5s ease-in-out;
+  }
+  

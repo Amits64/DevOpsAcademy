@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: postgres
+  password: Kubernetes@1993
+  host: localhost
+
+development:
+  <<: *default
+  database: devops_academy_development
+
+test:
+  <<: *default
+  database: devops_academy_test
+
+production:
+  <<: *default
+  database: devops_academy_production
+  username: devops_academy
+  password: <%= ENV['DEVOPS_ACADEMY_DATABASE_PASSWORD'] %>
