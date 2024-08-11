@@ -11,19 +11,17 @@
   <style>
     body {
       font-family: 'Roboto', sans-serif;
-      background-color: #f5f7f9;
+      background-color: #f0f2f5;
       color: #333;
       margin-top: 20px;
       overflow-x: hidden;
     }
     .navbar {
-      margin-bottom: 30px;
+      background-color: #007bff;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      background: #007bff;
-      transition: background 0.3s;
     }
     .navbar-brand {
-      font-size: 1.75rem;
+      font-size: 2rem;
       font-weight: bold;
       color: #fff !important;
     }
@@ -37,11 +35,12 @@
     .hero-section {
       position: relative;
       background: url('https://media.serveracademy.com/wp-content/uploads/2023/02/17171241/DevOps-compressed.jpg') no-repeat center center/cover;
-      padding: 100px 0;
+      padding: 120px 0;
       text-align: center;
       color: #fff;
       overflow: hidden;
       background-attachment: fixed;
+      border-bottom: 5px solid #ffc107;
     }
     .hero-section::before {
       content: "";
@@ -50,7 +49,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
       z-index: 1;
     }
     .hero-section .container {
@@ -58,44 +57,47 @@
       z-index: 2;
     }
     .hero-section h1 {
-      font-size: 3.5rem;
+      font-size: 4rem;
       margin-bottom: 20px;
       animation: fadeInDown 1.5s ease-in-out;
     }
     .hero-section p {
-      font-size: 1.5rem;
+      font-size: 1.75rem;
       margin-bottom: 40px;
       animation: fadeInUp 1.5s ease-in-out;
     }
     .hero-section .btn-primary {
-      padding: 10px 25px;
-      font-size: 1.25rem;
+      padding: 15px 30px;
+      font-size: 1.5rem;
       background-color: #ffc107;
       border: none;
-      border-radius: 30px;
-      transition: background-color 0.3s;
+      border-radius: 50px;
+      transition: background-color 0.3s, transform 0.3s;
     }
     .hero-section .btn-primary:hover {
       background-color: #e0a800;
+      transform: scale(1.1);
     }
     .card {
-      border-radius: 10px;
+      border-radius: 15px;
       overflow: hidden;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       position: relative;
+      background-color: #fff;
+      border: 1px solid #e0e0e0;
     }
     .card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     }
     .card-title {
-      font-size: 1.75rem;
+      font-size: 2rem;
       color: #007bff;
       font-weight: bold;
       margin-bottom: 15px;
     }
     .card-text {
-      font-size: 1.125rem;
+      font-size: 1.25rem;
       color: #495057;
     }
     .card-body {
@@ -105,9 +107,9 @@
     .btn-primary {
       background-color: #007bff;
       border-color: #007bff;
-      border-radius: 30px;
-      padding: 10px 20px;
-      font-size: 1rem;
+      border-radius: 50px;
+      padding: 12px 25px;
+      font-size: 1.1rem;
       transition: background-color 0.3s, transform 0.3s;
     }
     .btn-primary:hover {
@@ -118,11 +120,8 @@
     .footer {
       background-color: #343a40;
       color: #fff;
-      padding: 20px 0;
+      padding: 30px 0;
       text-align: center;
-      position: relative;
-      bottom: 0;
-      width: 100%;
     }
     .footer a {
       color: #ffc107;
@@ -132,7 +131,7 @@
       text-decoration: underline;
     }
     .card-icon {
-      font-size: 3rem;
+      font-size: 3.5rem;
       color: #007bff;
       margin-bottom: 15px;
     }
@@ -143,9 +142,9 @@
       height: 100vh;
     }
     .loader div {
-      width: 50px;
-      height: 50px;
-      border: 5px solid #007bff;
+      width: 60px;
+      height: 60px;
+      border: 6px solid #007bff;
       border-radius: 50%;
       border-top-color: transparent;
       animation: spin 1s linear infinite;
@@ -175,16 +174,16 @@
     }
     @media (max-width: 768px) {
       .hero-section h1 {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
       }
       .hero-section p {
-        font-size: 1.25rem;
+        font-size: 1.4rem;
       }
       .card-title {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
       }
       .card-text {
-        font-size: 1rem;
+        font-size: 1.1rem;
       }
     }
   </style>
@@ -195,7 +194,7 @@
     <div></div>
   </div>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
       <a class="navbar-brand" href="#">DevOps Academy</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -254,14 +253,13 @@
   </footer>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script>
-    $(window).on('load', function() {
-      $('.loader').fadeOut('slow', function() {
-        $(this).remove();
-      });
-    });
+    // Simulate loading time for demo purposes
+    window.onload = function() {
+      document.querySelector('.loader').style.display = 'none';
+    };
   </script>
 </body>
 </html>
