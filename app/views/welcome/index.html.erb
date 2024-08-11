@@ -30,9 +30,12 @@
       backdrop-filter: blur(5px);
     }
     .welcome-container {
-      position: relative;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       z-index: 2;
-      text-align: center;
+      text-align: left;
       background: rgba(255, 255, 255, 0.1);
       padding: 50px 40px;
       border-radius: 25px;
@@ -40,6 +43,11 @@
       max-width: 90%;
       animation: fadeIn 2s ease-in-out;
       backdrop-filter: blur(5px);
+      display: flex;
+      flex-direction: column;
+      justify-content: left;
+      align-items: left;
+      margin: auto;
     }
     .welcome-container h1 {
       font-size: 4rem;
@@ -49,6 +57,7 @@
       text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
       animation: slideIn 1s ease-out;
       letter-spacing: 2px;
+      text-align: left;
     }
     .welcome-container p {
       font-size: 1.5rem;
@@ -56,6 +65,12 @@
       line-height: 1.8;
       color: #eee;
       text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+      text-align: left;
+    }
+    .btn-container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
     }
     .btn-primary {
       background-color: #f39c12;
@@ -116,7 +131,9 @@
   <div class="welcome-container">
     <h1>Welcome to DevOps Academy</h1>
     <p>Your ultimate destination for mastering DevOps practices, tools, and methodologies with cutting-edge techniques and hands-on experience.</p>
-    <a href="/courses" class="btn btn-primary">Get Started</a>
+    <div class="btn-container">
+      <a href="/courses" class="btn btn-primary">Get Started</a>
+    </div>
   </div>
   <footer>
     <p>Made with <i class="fas fa-heart"></i> by the DevOps Academy Team</p>

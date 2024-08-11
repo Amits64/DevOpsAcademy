@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login - DevOps Academy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      color: #333;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 450px;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .container h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #0072ff;
+    }
+
+    .container p {
+      margin-bottom: 20px;
+      color: #555;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    .form-group input:focus {
+      border-color: #0072ff;
+      outline: none;
+    }
+
+    .form-group .btn {
+      width: 100%;
+      padding: 15px;
+      background: #0072ff;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .form-group .btn:hover {
+      background: #005bb5;
+    }
+
+    .form-group .links {
+      margin-top: 15px;
+    }
+
+    .form-group .links a {
+      color: #0072ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .form-group .links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Login</h1>
+    <p>Welcome back! Please log in to continue.</p>
+
+    <%= form_with(url: user_session_path, scope: :user, local: true) do |form| %>
+      <div class="form-group">
+        <%= form.label :email, "Email" %>
+        <%= form.email_field :email, autofocus: true, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :password, "Password" %>
+        <%= form.password_field :password, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= form.submit "Log In", class: 'btn' %>
+      </div>
+
+      <div class="form-group links">
+        <%= link_to "Forgot your password?", new_user_password_path %> |
+        <%= link_to "Sign up", new_user_registration_path %>
+      </div>
+    <% end %>
+  </div>
+</body>
+</html>

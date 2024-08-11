@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Resend Confirmation - DevOps Academy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      color: #333;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 450px;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .container h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #0072ff;
+    }
+
+    .container .field {
+      margin-bottom: 20px;
+    }
+
+    .container .field label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .container .field input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    .container .field input:focus {
+      border-color: #0072ff;
+      outline: none;
+    }
+
+    .container .actions {
+      margin-top: 20px;
+    }
+
+    .container .actions input[type="submit"] {
+      width: 100%;
+      padding: 15px;
+      background: #0072ff;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .container .actions input[type="submit"]:hover {
+      background: #005bb5;
+    }
+
+    .container .links {
+      margin-top: 20px;
+    }
+
+    .container .links a {
+      color: #0072ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .container .links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Resend Confirmation Instructions</h2>
+
+    <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="field">
+        <%= f.label :email, "Email" %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Resend confirmation instructions" %>
+      </div>
+    <% end %>
+
+    <div class="links">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</body>
+</html>

@@ -24,7 +24,9 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
-
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
 gem 'bigdecimal'
 gem 'mutex_m'
 gem 'pg'

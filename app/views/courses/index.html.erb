@@ -34,6 +34,17 @@
     .navbar-nav .nav-link:hover {
       color: #ffc107 !important;
     }
+    .navbar-right {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+    }
+    .navbar-right .nav-item {
+      margin-left: 20px;
+    }
+    .navbar-right .nav-item:last-child {
+      margin-right: 0;
+    }
     .hero-section {
       position: relative;
       background: url('https://media.serveracademy.com/wp-content/uploads/2023/02/17171241/DevOps-compressed.jpg') no-repeat center center/cover;
@@ -191,7 +202,7 @@
 </head>
 <body>
   <!-- Loader -->
-  <div class="loader">
+  <div class="loader" style="display: none;">
     <div></div>
   </div>
 
@@ -202,7 +213,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav mr-auto">
           <li class="nav-item">
             <a class="nav-link" href="/">Home</a>
           </li>
@@ -216,6 +227,10 @@
             <a class="nav-link" href="/contact">Contact</a>
           </li>
         </ul>
+        <div class="navbar-right">
+          <span class="navbar-text mr-3">Welcome, <%= @user_email %></span>
+          <a class="btn btn-outline-light" href="/logout">Logout</a>
+        </div>
       </div>
     </div>
   </nav>
@@ -237,8 +252,7 @@
               <i class="card-icon fas fa-laptop-code"></i>
               <h5 class="card-title"><%= course[:name] %></h5>
               <p class="card-text">$<%= course[:price] %></p>
-              <!-- Link to show page of the course -->
-              <a href="<%= course_path(course) %>" class="btn btn-primary"><i class="fas fa-info-circle"></i> Details</a>
+              <a href="<%= course[:url] %>" class="btn btn-primary">Enroll Now</a>
             </div>
           </div>
         </div>
@@ -248,12 +262,18 @@
 
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2024 DevOps Academy. All rights reserved. | <a href="/privacy">Privacy Policy</a></p>
+      <p>&copy; 2024 DevOps Academy. All rights reserved. <a href="/privacy-policy">Privacy Policy</a></p>
     </div>
   </footer>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // Script to handle the loader visibility
+    document.addEventListener("DOMContentLoaded", function() {
+      document.querySelector('.loader').style.display = 'none';
+    });
+  </script>
 </body>
 </html>
