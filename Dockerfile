@@ -29,12 +29,6 @@ RUN bundle exec rake assets:precompile
 # Stage 2: Runtime
 FROM ruby:3.3.4
 
-# Set working directory
-WORKDIR /app
-
-# Copy precompiled assets and application code
-COPY --from=build /app /app
-
 # Install dependencies
 RUN apt-get update -qq && apt-get install -y \
   nodejs \
@@ -42,10 +36,15 @@ RUN apt-get update -qq && apt-get install -y \
   yarn \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
-  && bundle install
+
+# Set working directory
+WORKDIR /app
+
+# Copy precompiled assets and application code
+COPY --from=build /app /app
 
 # Expose port
 EXPOSE 3000
 
 # Start the application
-CMD ["sh", "-c", "rails server -b 0.0.0.0"]
+CMD ["sh", "-c", "bundle install && rails server -b 0.0.0.0"]
