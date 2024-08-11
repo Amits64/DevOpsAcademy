@@ -4,11 +4,11 @@ on:
   push:
     branches:
       - main
-      - staging
+      - feature
   pull_request:
     branches:
       - main
-      - staging
+      - feature
     types: [opened, synchronize, reopened]
   workflow_dispatch:
 
